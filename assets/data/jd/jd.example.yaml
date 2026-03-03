@@ -1,0 +1,32 @@
+name: example_jd
+summary: 示例 JD，用于演示如何根据岗位关键词选择经历并（可选）调用 LLM 进行措辞贴合。
+
+target_title: 自然语言处理（NLP）算法工程师
+
+target_tags:
+  - llm
+  - nlp
+  - text-classification
+  - ner
+  - evaluation
+  - rag
+  - retrieval
+  - backend
+
+must_keywords:
+  - NLP
+  - 文本分类
+  - NER
+  - 信息抽取
+  - Transformers
+  - PyTorch
+  - LoRA
+  - DeepSpeed
+  - vLLM
+  - RAG
+  - LangGraph
+  - MCP
+
+work_bullet_count: 4
+research_bullet_count: 4
+

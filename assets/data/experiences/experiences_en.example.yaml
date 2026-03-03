@@ -1,0 +1,87 @@
+experiences:
+  - id: work_example_llm_platform
+    type: work
+    company: Example Tech Co., Ltd.
+    title: LLM / Agent Engineer
+    priority: high
+    tags:
+      - llm
+      - agent
+      - rag
+      - backend
+      - fastapi
+      - langgraph
+      - mcp
+      - retrieval
+      - evaluation
+    en:
+      core:
+        - Built an agent backend with FastAPI, using structured outputs and permission isolation to support reproducible workflows
+        - Implemented a RAG pipeline (embeddings, rerank, thresholding, incremental sync) to improve retrieval quality for long-context use cases
+      optional:
+        - Set up an evaluation loop (offline set + feedback) to track output quality and iterate prompts and tool routing
+      expandable:
+        - Optimized latency and throughput via batching and caching to improve service stability
+
+  - id: research_example_text_classification
+    type: research
+    company: Example University
+    title: NLP Text Classification & Information Extraction (Example)
+    priority: high
+    repo: EXAMPLE_REPO
+    repo_url: https://github.com/example/example-repo
+    tags:
+      - nlp
+      - text-classification
+      - ner
+      - transformers
+      - pytorch
+      - lora
+      - deepspeed
+      - vllm
+      - evaluation
+    en:
+      core:
+        - Used NER and keyword structuring to clean and preprocess training data, reducing noise in weak-supervision settings
+        - Built a multi-stage inference pipeline with an evaluation loop spanning classification and extraction tasks for reproducibility
+      optional:
+        - Ran parameter-efficient fine-tuning experiments (LoRA/FFT) and compared models and hyperparameters
+      expandable:
+        - Validated inference/deployment with DeepSpeed and vLLM to optimize memory usage and throughput
+
+  - id: work_example_agent_intern
+    type: work
+    company: Example AI Studio
+    title: Agent Development Intern
+    priority: medium
+    tags:
+      - agent
+      - langgraph
+      - long-text
+      - retrieval
+    en:
+      core:
+        - Assisted in long-document generation workflow design using LangGraph for outline planning, RAG, and assembly to improve consistency
+      optional:
+        - Helped integrate data sources into retrieval tools for multi-document citation and traceability
+      expandable:
+        - Improved cross-node context constraints to reduce semantic drift in multi-step assembly
+
+  - id: work_example_backend_intern
+    type: work
+    company: Example Business Software
+    title: Backend Development Intern
+    priority: low
+    tags:
+      - backend
+      - java
+      - rest-api
+      - sql
+    en:
+      core:
+        - Contributed to backend API development and data processing, writing SQL queries to support reporting and basic analysis
+      optional:
+        - Helped troubleshoot data consistency issues and improved API docs and basic test cases
+      expandable:
+        - Learned and applied basic RBAC concepts to support role boundary discussions
+

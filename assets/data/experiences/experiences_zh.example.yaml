@@ -1,0 +1,87 @@
+experiences:
+  - id: work_example_llm_platform
+    type: work
+    company: Example Tech Co., Ltd.
+    title: LLM / Agent Engineer
+    priority: high
+    tags:
+      - llm
+      - agent
+      - rag
+      - backend
+      - fastapi
+      - langgraph
+      - mcp
+      - retrieval
+      - evaluation
+    zh:
+      core:
+        - 基于 FastAPI 构建智能体服务，采用结构化输出与权限隔离，支撑多任务编排与可复现工作流落地
+        - 构建 RAG 检索链路（Embedding/Rerank/阈值截断/增量同步），提升长文本场景的信息召回与引用可控性
+      optional:
+        - 设计推理与评估闭环（离线集 + 在线反馈），持续跟踪模型输出质量并迭代 Prompt/工具调用策略
+      expandable:
+        - 针对吞吐与延迟进行工程优化，尝试批量推理与缓存策略，提升服务稳定性
+
+  - id: research_example_text_classification
+    type: research
+    company: Example University
+    title: NLP 文本分类与信息抽取研究（示例）
+    priority: high
+    repo: EXAMPLE_REPO
+    repo_url: https://github.com/example/example-repo
+    tags:
+      - nlp
+      - text-classification
+      - ner
+      - transformers
+      - pytorch
+      - lora
+      - deepspeed
+      - vllm
+      - evaluation
+    zh:
+      core:
+        - 引入实体抽取（NER）与关键词结构化，对训练数据进行清洗与预处理，降低弱监督场景噪声
+        - 构建多阶段推理与评估闭环，覆盖文本分类与信息抽取任务，提升可复现性与可用性
+      optional:
+        - 采用 LoRA/FFT 等参数高效微调策略进行实验，并对不同模型/超参进行对比评估
+      expandable:
+        - 尝试使用 DeepSpeed/vLLM 进行推理与部署验证，优化显存占用与吞吐
+
+  - id: work_example_agent_intern
+    type: work
+    company: Example AI Studio
+    title: Agent 开发实习
+    priority: medium
+    tags:
+      - agent
+      - langgraph
+      - long-text
+      - retrieval
+    zh:
+      core:
+        - 参与长文档生成工作流设计，使用 LangGraph 编排大纲规划、检索增强与拼装，提升输出一致性
+      optional:
+        - 协助整理数据源并接入检索工具，支持多文档引用与溯源
+      expandable:
+        - 参与基础工具链与节点间上下文约束优化，降低拼装过程语义漂移
+
+  - id: work_example_backend_intern
+    type: work
+    company: Example Business Software
+    title: 后端开发实习生
+    priority: low
+    tags:
+      - backend
+      - java
+      - rest-api
+      - sql
+    zh:
+      core:
+        - 参与业务系统后端 API 开发与数据处理，编写 SQL 查询支持报表导出与基础分析
+      optional:
+        - 协助排查接口与数据一致性问题，完善接口文档与简单测试用例
+      expandable:
+        - 学习并实践基础 RBAC 权限概念，支持角色权限边界梳理
+

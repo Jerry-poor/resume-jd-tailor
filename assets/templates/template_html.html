@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  body {
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #eef1f5;
+    color: #111;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: white;
+    margin: 10mm auto;
+    padding: 10mm 13mm 8mm 13mm;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  @media print {
+    body { background: white; }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      width: 210mm;
+      min-height: 297mm;
+      padding: 10mm 13mm 8mm 13mm;
+    }
+  }
+
+  /* Colors */
+  :root {
+    --primary: #4f6479;
+    --accent:  #bac5d1;
+    --text-main: #111;
+  }
+
+  /* Header Section */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .header-left {
+    flex: 1;
+  }
+  .header-right {
+    width: 90px;
+    margin-left: 20px;
+    flex-shrink: 0;
+  }
+  .header-right img {
+    width: 90px;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    background: #f0f0f0; 
+  }
+
+  .header-title-row {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 12px;
+  }
+  .main-title-group {
+    display: flex;
+    align-items: stretch;
+    height: 32px;
+  }
+  .main-title {
+    background: var(--primary);
+    color: #fff;
+    width: 140px;
+    padding-left: 18px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 15px) 100%, 0 100%);
+    letter-spacing: 2px;
+    box-sizing: border-box;
+  }
+  .main-title-accent {
+    width: 22px; 
+    background: var(--accent);
+    margin-left: 2px;
+    clip-path: polygon(15px 0, 100% 0, calc(100% - 15px) 100%, 0 100%);
+  }
+  .main-title-line {
+    flex: 1;
+    height: 1.5px;
+    background: var(--accent);
+    margin-left: -5px;
+    margin-bottom: 1px; /* To align it visually near the bottom baseline */
+    z-index: 0;
+  }
+
+  /* Info Grid */
+  .info-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 50px;
+    row-gap: 5px;
+    margin-left: 20px;
+    font-size: 13px;
+  }
+  .info-grid span {
+    display: inline-block;
+    color: #444;
+  }
+
+  /* Section Structure */
+  .section {
+    margin-bottom: 12px;
+  }
+  .section-row-1 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+  .title-group {
+    display: flex;
+    align-items: stretch;
+    height: 24px;
+    margin-right: 15px;
+  }
+  .title-main {
+    background: var(--primary);
+    color: #fff;
+    width: 130px; /* Fixed width to make them all perfectly vertically aligned on the right */
+    padding-left: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .title-accent {
+    width: 18px; 
+    background: var(--accent);
+    margin-left: 2px;
+    clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+  }
+  
+  .section-item-main {
+    font-size: 14px;
+    color: var(--text-main);
+  }
+  .section-item-date {
+    margin-left: auto; /* push to far right */
+    font-size: 13px;
+    color: #222;
+  }
+
+  /* Sub items & Lists */
+  .section-content {
+    margin-left: 2px;
+  }
+  .section-item-sub {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-main);
+    margin-bottom: 4px;
+  }
+  
+  .paragraph {
+    font-size: 13px;
+    line-height: 1.45;
+    margin-bottom: 1px;
+    color: var(--text-main);
+  }
+  .numbered-list {
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--text-main);
+  }
+  .numbered-list div {
+    margin-bottom: 0px;
+  }
+  .single-line {
+    display: block;
+    white-space: normal;
+    overflow: visible;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .section-subentry {
+    margin-top: 14px;
+  }
+  .section-entry-head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+  .link {
+    color: #2b70c9;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-title-row">
+        <div class="main-title-group">
+          <div class="main-title">个人简历</div>
+          <div class="main-title-accent"></div>
+        </div>
+        <div class="main-title-line"></div>
+      </div>
+      <div class="info-grid">
+        <div><span>姓名：</span>{{NAME}}</div>
+        <div><span>性别：</span>{{GENDER}}</div>
+        <div><span>年龄：</span>{{AGE}}</div>
+        <div><span>电话：</span>{{PHONE}}</div>
+        <div><span>邮箱：</span>{{EMAIL}}</div>
+        <div><span>Github：</span>{{GITHUB}}</div>
+        <div style="grid-column: 1 / -1;"><span>意向岗位：</span>{{TITLE}}</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <img src="{{PHOTO}}" alt="" onerror="this.style.display='none';"/>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="section">
+    <div class="section-row-1">
+      <div class="title-group">
+        <div class="title-main">{{SECTION EDU}}</div>
+        <div class="title-accent"></div>
+      </div>
+      <div class="section-item-main">{{EDU_1_SCHOOL}}</div>
+      <div class="section-item-date">{{EDU_1_DATES}}</div>
+    </div>
+    <div class="section-content">
+      <div class="section-item-sub">{{EDU_1_DEGREE}}</div>
+    </div>
+  </div>
+
+  <!-- Certifications -->
+  <div class="section">
+    <div class="section-row-1">
+      <div class="title-group">
+        <div class="title-main">{{SECTION CERT}}</div>
+        <div class="title-accent"></div>
+      </div>
+      <div class="section-item-main">{{CERT_1_ORG}}</div>
+      <div class="section-item-date">{{CERT_1_DATES}}</div>
+    </div>
+    <div class="section-content">
+      <div class="section-item-sub">{{CERT_1_TITLE}}</div>
+      <div class="paragraph" style="{{CERT_1_URL_STYLE}} color: #2b70c9; margin-top: 2px; line-height: 1.2;">
+        证书链接： <a href="{{CERT_1_URL}}" class="link">{{CERT_1_URL_LABEL}}</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Research & Project -->
+  <div class="section" style="{{RESEARCH_1_STYLE}}">
+    <div class="section-row-1">
+      <div class="title-group">
+        <div class="title-main">{{SECTION RESEARCH}}</div>
+        <div class="title-accent"></div>
+      </div>
+      <div class="section-item-main">{{RESEARCH_1_ORG}}</div>
+      <div class="section-item-date">{{RESEARCH_1_DATES}}</div>
+    </div>
+    <div class="section-content">
+      <div class="section-item-sub">{{RESEARCH_1_TITLE}}</div>
+      <div class="numbered-list">
+        <div class="single-line" style="{{RESEARCH_1_BULLET_1_STYLE}}">1. {{RESEARCH_1_BULLET_1}}</div>
+        <div class="single-line" style="{{RESEARCH_1_BULLET_2_STYLE}}">2. {{RESEARCH_1_BULLET_2}}</div>
+        <div class="single-line" style="{{RESEARCH_1_BULLET_3_STYLE}}">3. {{RESEARCH_1_BULLET_3}}</div>
+        <div class="single-line" style="{{RESEARCH_1_BULLET_4_STYLE}}">4. {{RESEARCH_1_BULLET_4}}</div>
+        <div class="single-line" style="{{RESEARCH_1_BULLET_5_STYLE}}">5. {{RESEARCH_1_BULLET_5}}</div>
+      </div>
+      <div class="paragraph" style="{{RESEARCH_1_REPO_STYLE}} color: #2b70c9; margin-top: 2px; line-height: 1.2;">
+        GitHub 仓库： <a href="{{RESEARCH_1_REPO_URL}}" class="link">{{RESEARCH_1_REPO}}</a>
+      </div>
+      <div class="paragraph" style="{{RESEARCH_1_ARTICLE_STYLE}} color: #2b70c9; margin-top: 1px; line-height: 1.2;">
+        相关文章： <a href="{{RESEARCH_1_ARTICLE_URL}}" class="link">{{RESEARCH_1_ARTICLE_LABEL}}</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Work Experience -->
+  <div class="section" style="{{WORK_1_STYLE}}">
+    <div class="section-row-1">
+      <div class="title-group">
+        <div class="title-main">{{SECTION WORK}}</div>
+        <div class="title-accent"></div>
+      </div>
+      <div class="section-item-main">{{WORK_1_COMPANY}}</div>
+      <div class="section-item-date">{{WORK_1_DATES}}</div>
+    </div>
+    <div class="section-content">
+      <div class="section-item-sub">{{WORK_1_TITLE}}</div>
+      <div class="numbered-list">
+        <div class="single-line" style="{{WORK_1_BULLET_1_STYLE}}">1. {{WORK_1_BULLET_1}}</div>
+        <div class="single-line" style="{{WORK_1_BULLET_2_STYLE}}">2. {{WORK_1_BULLET_2}}</div>
+        <div class="single-line" style="{{WORK_1_BULLET_3_STYLE}}">3. {{WORK_1_BULLET_3}}</div>
+        <div class="single-line" style="{{WORK_1_BULLET_4_STYLE}}">4. {{WORK_1_BULLET_4}}</div>
+        <div class="single-line" style="{{WORK_1_BULLET_5_STYLE}}">5. {{WORK_1_BULLET_5}}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Internship Experience -->
+  <div class="section" style="{{INTERN_SECTION_STYLE}}">
+    <div class="section-row-1">
+      <div class="title-group">
+        <div class="title-main">{{SECTION INTERN}}</div>
+        <div class="title-accent"></div>
+      </div>
+    </div>
+
+    <div class="section-content" style="{{INTERN_1_STYLE}}">
+      <div class="section-entry-head">
+        <div class="section-item-main">{{INTERN_1_COMPANY}}</div>
+        <div class="section-item-date">{{INTERN_1_DATES}}</div>
+      </div>
+      <div class="section-item-sub">{{INTERN_1_TITLE}}</div>
+      <div class="paragraph single-line" style="{{INTERN_1_BULLET_1_STYLE}}">{{INTERN_1_BULLET_1}}</div>
+    </div>
+
+    <div class="section-content section-subentry" style="{{INTERN_2_STYLE}}">
+      <div class="section-entry-head">
+        <div class="section-item-main">{{INTERN_2_COMPANY}}</div>
+        <div class="section-item-date">{{INTERN_2_DATES}}</div>
+      </div>
+      <div class="section-item-sub">{{INTERN_2_TITLE}}</div>
+      <div class="paragraph single-line" style="{{INTERN_2_BULLET_1_STYLE}}">{{INTERN_2_BULLET_1}}</div>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div class="section">
+    <div class="section-row-1">
+      <div class="title-group">
+        <div class="title-main">{{SECTION SKILLS}}</div>
+        <div class="title-accent"></div>
+      </div>
+    </div>
+    <div class="section-content">
+      <div class="paragraph">{{SKILLS_LLM}}</div>
+      <div class="paragraph">{{SKILLS_RAG}}</div>
+      <div class="paragraph">{{SKILLS_FULLSTACK}}</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

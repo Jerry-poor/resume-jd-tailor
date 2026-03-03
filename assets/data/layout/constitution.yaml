@@ -1,0 +1,71 @@
+version: v2.0.0
+
+pipeline:
+  # Current supported path is HTML-first.
+  required_order:
+    - build_json
+    - render_html
+    - export_pdf
+  allow_parallel_on_dependent_steps: false
+
+template:
+  # Single source of truth template.
+  path: assets/templates/template_html.html
+  placeholder_syntax: "{{TOKEN}}"
+  token_aliasing:
+    # The renderer treats spaces/underscores as aliases:
+    # e.g. {{SECTION EDU}} can read SECTION_EDU from JSON.
+    allow_space_underscore_swap: true
+  photo:
+    input_key: PHOTO
+    embedding: data_uri
+    on_missing: blank
+
+tokens:
+  # These tokens appear in the current HTML template and should be provided by
+  # `assets/data/profile/base_resume*.json` + `scripts/build_resume_data.py`.
+  required:
+    - NAME
+    - GENDER
+    - AGE
+    - PHONE
+    - EMAIL
+    - GITHUB
+    - TITLE
+    - PHOTO
+    - SECTION_EDU
+    - SECTION_CERT
+    - SECTION_RESEARCH
+    - SECTION_WORK
+    - SECTION_SKILLS
+    - EDU_1_SCHOOL
+    - EDU_1_DATES
+    - EDU_1_DEGREE
+    - CERT_1_ORG
+    - CERT_1_DATES
+    - CERT_1_TITLE
+    - RESEARCH_1_ORG
+    - RESEARCH_1_DATES
+    - RESEARCH_1_TITLE
+    - RESEARCH_1_REPO
+    - RESEARCH_1_REPO_URL
+    - RESEARCH_1_BULLET_1
+    - RESEARCH_1_BULLET_2
+    - RESEARCH_1_BULLET_3
+    - RESEARCH_1_BULLET_4
+    - RESEARCH_1_BULLET_5
+    - RESEARCH_1_BULLET_6
+    - WORK_1_COMPANY
+    - WORK_1_DATES
+    - WORK_1_TITLE
+    - WORK_1_BULLET_1
+    - WORK_1_BULLET_2
+    - SKILLS_LLM
+    - SKILLS_RAG
+    - SKILLS_FULLSTACK
+  optional: []
+
+quality_gates:
+  no_unresolved_placeholders: true
+  pdf_must_exist: true
+  pdf_max_pages: 1

@@ -1,0 +1,40 @@
+{
+  "NAME": "Your Name",
+  "GENDER": "",
+  "AGE": "",
+  "PHONE": "+86-xxxxxxxxxxx",
+  "EMAIL": "you@example.com",
+  "GITHUB": "your-handle",
+  "TITLE": "自然语言处理（NLP）算法工程师",
+  "EDU_1_SCHOOL": "Your University",
+  "EDU_1_DATES": "2021.09-2025.06",
+  "EDU_1_DEGREE": "B.S. in Computer Science (Example)",
+  "CERT_1_ORG": "NVIDIA",
+  "CERT_1_DATES": "YYYY.MM-YYYY.MM",
+  "CERT_1_TITLE": "Generative AI / LLM Certification (Example)",
+  "CERT_1_URL": "",
+  "CERT_1_URL_LABEL": "Credly",
+  "RESEARCH_1_REPO": "",
+  "RESEARCH_1_REPO_URL": "",
+  "RESEARCH_1_ARTICLE_URL": "",
+  "RESEARCH_1_ARTICLE_LABEL": "链接",
+  "SKILLS_LLM": "LLM 工程化：Qwen/DeepSeek；FFT/LoRA；DeepSpeed；vLLM；量化/批推，权衡延迟/成本/稳定性。",
+  "SKILLS_RAG": "Agent/RAG 平台：LangGraph；MCP；FastAPI；Embedding/Rerank；增量同步；权限隔离与结构化输出。",
+  "SKILLS_FULLSTACK": "规范驱动：Spec/Schema/Checklist；多智能体协作：任务拆解、并行调度；工具链：Codex/Claude Code/Trae/antigravity。",
+  "PHOTO": "",
+  "experience_dates": {
+    "zh": {
+      "work_example_llm_platform": "2025.01-至今",
+      "research_example_text_classification": "2024.09-2025.01",
+      "work_example_agent_intern": "2024.06-2024.08",
+      "work_example_backend_intern": "2023.06-2023.08"
+    },
+    "en": {
+      "work_example_llm_platform": "Jan 2025 - Present",
+      "research_example_text_classification": "Sep 2024 - Jan 2025",
+      "work_example_agent_intern": "Jun 2024 - Aug 2024",
+      "work_example_backend_intern": "Jun 2023 - Aug 2023"
+    }
+  }
+}
+

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Resume JD Tailor"
+  short_description: "Tailor resumes to a JD with optional LLM bullet rewrites"
+  default_prompt: "Use $resume-jd-tailor to tailor my resume to a target JD, rewrite selected bullets against the JD with the configured LLM when available, and render the final one-page HTML/PDF outputs."
