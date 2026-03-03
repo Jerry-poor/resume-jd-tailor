@@ -15,13 +15,25 @@ It is designed to be safe for a **public GitHub repo**: no personal resume conte
 - Python 3.10+（建议）
 - Windows 上安装 Microsoft Edge 或 Google Chrome（用于 HTML 转 PDF）
 
-安装依赖（最小可运行）:
+安装依赖（推荐用 `uv`）:
+
+```powershell
+uv sync
+```
+
+安装依赖（不使用 `uv`，最小可运行）:
 
 ```powershell
 python -m pip install pyyaml python-dotenv
 ```
 
-如果你要用 “JD 图片 -> Gemini（Vertex AI）改写”:
+如果你要用 “JD 图片 -> Gemini（Vertex AI）改写 / PDF 视觉审计”:
+
+```powershell
+uv sync --extra gemini
+```
+
+如果你不用 `uv`:
 
 ```powershell
 python -m pip install google-genai
@@ -188,13 +200,25 @@ Runtime:
 - Python 3.10+ recommended
 - Microsoft Edge or Google Chrome on Windows (used for HTML -> PDF export)
 
-Install minimal deps:
+Install deps (recommended with `uv`):
+
+```powershell
+uv sync
+```
+
+Install minimal deps (without `uv`):
 
 ```powershell
 python -m pip install pyyaml python-dotenv
 ```
 
-If you want "JD image -> Gemini (Vertex AI) rewrite":
+If you want "JD image -> Gemini (Vertex AI) rewrite / PDF visual audit":
+
+```powershell
+uv sync --extra gemini
+```
+
+Without `uv`:
 
 ```powershell
 python -m pip install google-genai

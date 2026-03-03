@@ -7,6 +7,12 @@
   - `PyYAML` (for `scripts/build_resume_data.py`)
   - `python-dotenv` (optional, to load the workspace root `.env` automatically)
 
+If you use `uv` (recommended):
+
+```powershell
+uv sync
+```
+
 If missing, install (example):
 
 ```powershell
@@ -28,7 +34,17 @@ If `DEEPSEEK_API_KEY` is unset, the script falls back to deterministic keyword r
 
 ## Optional Gemini PDF visual audit
 
-Use `uv run --with google-genai --with python-dotenv` to execute `scripts/audit_resume_pdf_style.py`.
+Install the optional extra (recommended with `uv`):
+
+```powershell
+uv sync --extra gemini
+```
+
+Then execute:
+
+```powershell
+uv run .\scripts\audit_resume_pdf_style.py --help
+```
 
 Requirements:
 

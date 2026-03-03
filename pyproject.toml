@@ -1,0 +1,19 @@
+[project]
+name = "resume-jd-tailor"
+version = "0.1.0"
+description = "Tailor a resume to a job description: data selection -> optional LLM rewrite -> HTML -> PDF."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Jerry-poor" }]
+dependencies = [
+  "PyYAML>=6.0",
+  "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+# Required only when you want to rewrite bullets from a JD image via Gemini on Vertex AI,
+# or run the visual PDF audit script.
+gemini = [
+  "google-genai>=1.0.0",
+]

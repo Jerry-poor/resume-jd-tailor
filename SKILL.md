@@ -61,7 +61,9 @@ python .\scripts\build_resume_html_pdf.py `
 3) Optional visual QA audit of the final PDF with Gemini on Vertex AI (run through `uv`):
 
 ```powershell
-uv run --with google-genai --with python-dotenv .\scripts\audit_resume_pdf_style.py `
+uv sync --extra gemini
+
+uv run .\scripts\audit_resume_pdf_style.py `
   --pdf .\outputs\final\resume.pdf `
   --vertex-project-id YOUR_GCP_PROJECT_ID `
   --vertex-location global `
